@@ -1,0 +1,29 @@
+<ion-content class="content" color="primary">
+    <ion-grid #j_146>
+        <ion-row #j_147>
+            <ion-col #j_148 class="terms-wrapper">
+                <div #j_149 class="terms-panel">
+                    <ion-text #j_150 color="dark" class="title">
+                        Bug reporting
+                    </ion-text>
+                    <ion-text #j_151 color="dark" class="description">
+                        If you have encountered a bug with the program, please report it here.
+                    </ion-text>
+                    <ion-item #j_152__ion4Item>
+                        <ion-input #j_152 name="Input1" placeholder="Enter text">
+                        </ion-input>
+                    </ion-item>
+                    <ion-button #j_153 color="primary" expand="block" shape="round" [routerLink]="['/signup']"
+                    (click)="button1_copyClick__j_153($event, currentItem)">
+                        Report bug
+                    </ion-button>
+                    <div #j_154 class="go-back">
+                        <ion-text #j_155 color="dark" class="go-back" (click)="Apperyio.navigateTo('Tabs')">
+                            Go Back
+                        </ion-text>
+                    </div>
+                </div>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-content>

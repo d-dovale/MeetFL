@@ -1,0 +1,183 @@
+<ion-header no-border>
+    <ion-toolbar #j_122 color="primary">
+        <ion-buttons #j_123 slot="start" *ngIf="!editMode">
+            <ion-menu-button #j_124 color="light">
+            </ion-menu-button>
+        </ion-buttons>
+        <ion-buttons #j_125 slot="start" *ngIf="editMode">
+            <ion-button #j_126 color="light" expand="block" fill="clear" (click)="cancelbuttonClick__j_126($event, currentItem)">
+                Cancel
+            </ion-button>
+        </ion-buttons>
+        <ion-buttons #j_127 slot="end" *ngIf="editMode">
+            <ion-button #j_128 color="light" disabled="{{profileForm.invalid}}" expand="block"
+            fill="clear" (click)="savebuttonClick__j_128($event, currentItem)">
+                Save
+            </ion-button>
+        </ion-buttons>
+        <ion-buttons #j_129 slot="end" *ngIf="!editMode">
+            <ion-button #j_130 color="light" expand="block" fill="clear" (click)="editbuttonClick__j_130($event, currentItem)">
+                <ion-icon #j_130__icon name="brush" src="assets/images/edit_Profile.svg">
+                </ion-icon>
+            </ion-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+<ion-content class="main-content">
+    <div #j_88>
+        <div #j_89 class="title-wrapper">
+            <ion-avatar #j_90>
+                <ion-img #j_91 [src]="photo" alt="Avatar">
+                </ion-img>
+            </ion-avatar>
+            <ion-text #j_92 color="light" class="name">
+                {{userInfo.firstName}} {{userInfo.lastName}}
+            </ion-text>
+            <ion-text #j_93 color="light" class="description">
+                Member since 21th Mrach, 2019
+            </ion-text>
+        </div>
+        <div #j_94>
+            <form #profileForm="ngForm" #profileForm_el class="profile-form" [ngClass]="{'view-mode': !editMode}">
+                <ion-item #j_96__ion4Item lines="none">
+                    <ion-label #j_96__ion4Label color="medium" position="floating">
+                        First name
+                    </ion-label>
+                    <ion-icon #j_96__icon name="person" slot="end" color="medium">
+                    </ion-icon>
+                    <ion-input #firstName="ngModel" #firstName_el [ngModel] clearInput="true" color="dark"
+                    maxlength="50" minlength="1" name="firstName" readonly="{{!editMode}}" required="true">
+                    </ion-input>
+                </ion-item>
+                <ion-text #j_97 color="danger" class="error" [ngClass]="{'visible': firstName.touched && firstName.errors}"
+                *ngIf="editMode">
+                    {{firstName.errors &amp;&amp; firstName.errors.pattern ? 'Special characters are
+                    not allowed' : 'Please enter a valid First name'}}
+                </ion-text>
+                <ion-item #j_98__ion4Item lines="none">
+                    <ion-label #j_98__ion4Label color="medium" position="floating">
+                        Last name
+                    </ion-label>
+                    <ion-icon #j_98__icon name="person" slot="end" color="medium">
+                    </ion-icon>
+                    <ion-input #lastName="ngModel" #lastName_el [ngModel] clearInput="true" color="dark"
+                    maxlength="50" minlength="1" name="lastName" readonly="{{!editMode}}" required="true">
+                    </ion-input>
+                </ion-item>
+                <ion-text #j_99 color="danger" class="error" [ngClass]="{'visible': lastName.touched && lastName.errors}"
+                *ngIf="editMode">
+                    {{lastName.errors &amp;&amp; lastName.errors.pattern ? 'Special characters are not
+                    allowed' : 'Please enter a valid Last name'}}
+                </ion-text>
+                <ion-item #j_100__ion4Item lines="none">
+                    <ion-label #j_100__ion4Label color="medium" position="floating">
+                        Address 1
+                    </ion-label>
+                    <ion-input #address1="ngModel" #address1_el [ngModel] clearInput="true" color="dark"
+                    maxlength="50" name="address1" readonly="{{!editMode}}">
+                    </ion-input>
+                </ion-item>
+                <ion-text #j_101 color="danger" class="error" [ngClass]="{'visible': address1.touched && address1.errors}"
+                *ngIf="editMode">
+                    Please enter a valid Address 1
+                </ion-text>
+                <ion-item #j_102__ion4Item lines="none">
+                    <ion-label #j_102__ion4Label color="medium" position="floating">
+                        Address 2
+                    </ion-label>
+                    <ion-input #address2="ngModel" #address2_el [ngModel] clearInput="true" color="dark"
+                    maxlength="50" name="address2" readonly="{{!editMode}}">
+                    </ion-input>
+                </ion-item>
+                <ion-text #j_103 color="danger" class="error" [ngClass]="{'visible': address2.touched && address2.errors}"
+                *ngIf="editMode">
+                    Please enter a valid Address 2
+                </ion-text>
+                <ion-item #j_104__ion4Item lines="none">
+                    <ion-label #j_104__ion4Label color="medium" position="floating">
+                        City
+                    </ion-label>
+                    <ion-icon #j_104__icon name="pin" slot="end" color="medium">
+                    </ion-icon>
+                    <ion-input #city="ngModel" #city_el [ngModel] clearInput="true" color="dark" maxlength="50"
+                    name="city" pattern="^[a-zA-Z0-9 ]*$" readonly="{{!editMode}}">
+                    </ion-input>
+                </ion-item>
+                <ion-text #j_105 color="danger" class="error" [ngClass]="{'visible': city.touched && city.errors}"
+                *ngIf="editMode">
+                    Please enter a valid City
+                </ion-text>
+                <ion-item #j_106__ion4Item lines="none">
+                    <ion-label #j_106__ion4Label color="medium" position="floating">
+                        Zip
+                    </ion-label>
+                    <ion-input #zipCode="ngModel" #zipCode_el [ngModel] clearInput="true" color="dark"
+                    name="zipCode" pattern="(^\d{5}$)|(^\d{5}-\d{4}$)" readonly="{{!editMode}}" type="text">
+                    </ion-input>
+                </ion-item>
+                <ion-text #j_107 color="danger" class="error" [ngClass]="{'visible': zipCode.touched && zipCode.errors}"
+                *ngIf="editMode">
+                    Please enter a valid Zip code
+                </ion-text>
+                <ion-item #j_108__ion4Item lines="none">
+                    <ion-label #j_108__ion4Label color="medium" position="floating">
+                        Email
+                    </ion-label>
+                    <ion-icon #j_108__icon name="mail" slot="end" color="medium">
+                    </ion-icon>
+                    <ion-input #email="ngModel" #email_el [ngModel] color="dark" maxlength="254" minlength="1"
+                    name="email" pattern="^(([^<>()\[\]\\.,;:\s@&#34;]+(\.[^<>()\[\]\\.,;:\s@&#34;]+)*)|(&#34;.+&#34;))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$"
+                    readonly="{{!editMode}}" required="true" type="email">
+                    </ion-input>
+                </ion-item>
+                <ion-item #j_109__ion4Item lines="none">
+                    <ion-label #j_109__ion4Label color="medium" position="floating">
+                        Phone number
+                    </ion-label>
+                    <ion-icon #j_109__icon name="call" slot="end" color="medium">
+                    </ion-icon>
+                    <ion-input #phoneNumber="ngModel" #phoneNumber_el [ngModel] clearInput="true" color="dark"
+                    maxlength="14" name="phoneNumber" readonly="{{!editMode}}" type="tel">
+                    </ion-input>
+                </ion-item>
+                <ion-text #j_110 color="danger" class="error" [ngClass]="{'visible': phoneNumber.touched && phoneNumber.errors}"
+                *ngIf="editMode">
+                    Please enter a valid Phone Number
+                </ion-text>
+                <ion-item #j_111 lines="none">
+                    <ion-label #j_111__ion4Label color="medium" position="floating">
+                        Type of Job
+                    </ion-label>
+                    <ion-select #jobID="ngModel" #jobID_el [ngModel] disabled="{{!editMode}}" name="jobID">
+                        <ion-select-option #j_113 value="human_services">
+                            Human Services
+                        </ion-select-option>
+                        <ion-select-option #j_114 value="finance">
+                            Finance
+                        </ion-select-option>
+                        <ion-select-option #j_115 value="education">
+                            Education
+                        </ion-select-option>
+                        <ion-select-option #j_116 value="research">
+                            Research
+                        </ion-select-option>
+                    </ion-select>
+                </ion-item>
+                <ion-item #j_117 lines="none">
+                    <ion-label #j_117__ion4Label color="medium" position="floating">
+                        Position
+                    </ion-label>
+                    <ion-select #position="ngModel" #position_el [ngModel] disabled="{{!editMode}}"
+                    name="position">
+                        <ion-select-option #j_119 value="employer">
+                            Employer
+                        </ion-select-option>
+                        <ion-select-option #j_120 value="employee">
+                            Employee
+                        </ion-select-option>
+                    </ion-select>
+                </ion-item>
+            </form>
+        </div>
+    </div>
+</ion-content>

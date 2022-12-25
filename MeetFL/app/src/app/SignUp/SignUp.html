@@ -1,0 +1,140 @@
+<ion-content class="content" color="primary">
+    <ion-grid #j_25>
+        <ion-row #j_26>
+            <ion-col #j_27 class="sign-up-wrapper">
+                <div #j_28 class="sign-up-panel">
+                    <div #j_29 class="title-wrapper">
+                        <ion-text #j_30 color="primary" class="title">
+                            Sign up
+                        </ion-text>
+                    </div>
+                    <div #j_31 class="form-wrapper">
+                        <form #signUpForm="ngForm" #signUpForm_el (ngSubmit)="signupformNgSubmit__j_32($event, currentItem)">
+                            <ion-item #j_33__ion4Item>
+                                <ion-label #j_33__ion4Label color="light" position="floating">
+                                    First name
+                                </ion-label>
+                                <ion-icon #j_33__icon name="person" slot="end" color="light">
+                                </ion-icon>
+                                <ion-input #firstName="ngModel" #firstName_el [ngModel] [ngModelOptions]="{updateOn: 'change'}"
+                                color="dark" maxlength="50" minlength="1" name="firstName" pattern="^[a-zA-Z0-9 ]*$"
+                                required="true" type="text">
+                                </ion-input>
+                            </ion-item>
+                            <ion-text #j_34 color="danger" class="error" [ngClass]="{'visible': firstName.touched && firstName.errors}">
+                                {{firstName.errors &amp;&amp; firstName.errors.pattern ? 'Special characters are
+                                not allowed' : 'Please enter a valid First name'}}
+                            </ion-text>
+                            <ion-item #j_35__ion4Item>
+                                <ion-label #j_35__ion4Label color="light" position="floating">
+                                    Last name
+                                </ion-label>
+                                <ion-icon #j_35__icon name="person" slot="end" color="light">
+                                </ion-icon>
+                                <ion-input #lastName="ngModel" #lastName_el [ngModel] [ngModelOptions]="{updateOn: 'change'}"
+                                color="dark" maxlength="50" minlength="1" name="lastName" pattern="^[a-zA-Z0-9 ]*$"
+                                required="true" type="text">
+                                </ion-input>
+                            </ion-item>
+                            <ion-text #j_36 color="danger" class="error" [ngClass]="{'visible': lastName.touched && lastName.errors}">
+                                {{lastName.errors &amp;&amp; lastName.errors.pattern ? 'Special characters are not
+                                allowed' : 'Please enter a valid Last name'}}
+                            </ion-text>
+                            <ion-item #j_37__ion4Item>
+                                <ion-label #j_37__ion4Label color="light" position="floating">
+                                    Email Address
+                                </ion-label>
+                                <ion-icon #j_37__icon name="mail" slot="end" color="light">
+                                </ion-icon>
+                                <ion-input #username="ngModel" #username_el [ngModel] [ngModelOptions]="{updateOn: 'change'}"
+                                color="dark" maxlength="254" minlength="1" name="username" pattern="^(([^<>()\[\]\\.,;:\s@&#34;]+(\.[^<>()\[\]\\.,;:\s@&#34;]+)*)|(&#34;.+&#34;))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$"
+                                required="true" type="email">
+                                </ion-input>
+                            </ion-item>
+                            <ion-text #j_38 color="danger" class="error" [ngClass]="{'visible': username.touched && username.errors}">
+                                Please enter a valid Email
+                            </ion-text>
+                            <ion-item #j_39__ion4Item>
+                                <ion-label #j_39__ion4Label color="light" position="floating">
+                                    Password
+                                </ion-label>
+                                <ion-icon #j_39__icon ngClass="eye" name="eye" slot="end" color="light">
+                                </ion-icon>
+                                <ion-input #password="ngModel" #password_el [ngModel] [ngModelOptions]="{updateOn: 'change'}"
+                                ngClass="password" color="dark" maxlength="50" minlength="6" name="password" pattern="^(?=.*[a-zA-Z])(?=.*[0-9])(?=.*[ -/:-@\[-`{-~]).{6,50}$"
+                                required="true" type="password">
+                                </ion-input>
+                            </ion-item>
+                            <ion-text #j_40 color="danger" class="error" [ngClass]="{'visible': password.touched && password.errors}">
+                                {{password.errors &amp;&amp; password.errors.pattern ? 'Password must be at least
+                                6 characters long, contain letters, numbers and symbols' : 'Please enter a valid
+                                Password'}}
+                            </ion-text>
+                            <ion-item #j_41 lines="none" disabled="false">
+                                <ion-label #j_41__ion4Label color="light" position="floating">
+                                    What type of job are you looking for?
+                                </ion-label>
+                                <ion-select #jobID="ngModel" #jobID_el [ngModel] disabled="false" name="jobID">
+                                    <ion-select-option #j_43 value="human_services">
+                                        Human Services
+                                    </ion-select-option>
+                                    <ion-select-option #j_44 value="finance">
+                                        Finance
+                                    </ion-select-option>
+                                    <ion-select-option #j_45 value="education">
+                                        Education
+                                    </ion-select-option>
+                                    <ion-select-option #j_46 value="research">
+                                        Research
+                                    </ion-select-option>
+                                </ion-select>
+                            </ion-item>
+                            <ion-item #j_47 lines="none" disabled="false">
+                                <ion-label #j_47__ion4Label color="light" position="floating">
+                                    What is your position?
+                                </ion-label>
+                                <ion-select #position="ngModel" #position_el [ngModel] disabled="false" name="position">
+                                    <ion-select-option #j_49 value="employee">
+                                        Employee
+                                    </ion-select-option>
+                                    <ion-select-option #j_50 value="employer">
+                                        Employer
+                                    </ion-select-option>
+                                </ion-select>
+                            </ion-item>
+                            <ion-button #j_51 color="primary" expand="block" shape="round" type="submit" (click)="markFormControlsAsTouched()">
+                                Sign up
+                            </ion-button>
+                        </form>
+                    </div>
+                </div>
+            </ion-col>
+        </ion-row>
+        <ion-row #j_52>
+            <ion-col #j_53 class="bottom-wrapper">
+                <div #j_54 class="accept-policy">
+                    <ion-text #j_55>
+                        By signing up you accept the
+                    </ion-text>
+                    <ion-text #j_56 color="secondary" (click)="Apperyio.navigateTo('termsofservice')">
+                        Terms of Service
+                    </ion-text>
+                    <ion-text #j_57>
+                        and
+                    </ion-text>
+                    <ion-text #j_58 color="secondary" (click)="Apperyio.navigateTo('privacypolicy')">
+                        Privacy Policy
+                    </ion-text>
+                </div>
+                <div #j_59 class="have-account">
+                    <ion-text #j_60>
+                        Already have an account?
+                    </ion-text>
+                    <ion-text #j_61 color="secondary" (click)="Apperyio.navigateTo('login')">
+                        Sign in
+                    </ion-text>
+                </div>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-content>

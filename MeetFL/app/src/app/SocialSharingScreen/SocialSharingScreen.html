@@ -1,0 +1,75 @@
+<ion-header>
+    <ion-toolbar #j_19 color="primary">
+        <ion-title #j_21>
+            Tell your friends about MeetFL!
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+<ion-content class="ion-padding">
+    <ion-item #j_2__ion4Item>
+        <ion-label #j_2__ion4Label position="stacked">
+            Message
+        </ion-label>
+        <ion-icon #j_2__icon name="mail" slot="end">
+        </ion-icon>
+        <ion-input #j_2 name="Input1" placeholder="Enter text" value="Install MeetFL today, It's the best!">
+        </ion-input>
+    </ion-item>
+    <ion-item #j_3__ion4Item>
+        <ion-label #j_3__ion4Label position="stacked">
+            Subject
+        </ion-label>
+        <ion-icon #j_3__icon name="albums" slot="end">
+        </ion-icon>
+        <ion-input #j_3 name="Input1" placeholder="Enter text" value="MeetFL">
+        </ion-input>
+    </ion-item>
+    <ion-item #j_4__ion4Item>
+        <ion-label #j_4__ion4Label position="stacked">
+            Url
+        </ion-label>
+        <ion-icon #j_4__icon name="add" slot="end">
+        </ion-icon>
+        <ion-input #j_4 name="Input1" placeholder="Enter text">
+        </ion-input>
+    </ion-item>
+    <ion-item #j_5__ion4Item>
+        <ion-label #j_5__ion4Label position="stacked">
+            Image
+        </ion-label>
+        <ion-icon #j_5__icon name="image" slot="end">
+        </ion-icon>
+        <ion-input #j_5 name="Input1" placeholder="Enter text" [(ngModel)]="imageToShare">
+        </ion-input>
+    </ion-item>
+    <ion-grid #j_6>
+        <ion-row #j_7>
+            <ion-col #j_8>
+                <ion-button #j_9 expand="full" shape="round" (click)="sharebuttonClick__j_9($event, currentItem)">
+                    <ion-icon #j_9__icon name="share-alt" slot="start">
+                    </ion-icon>
+                    Share
+                </ion-button>
+            </ion-col>
+            <ion-col #j_10>
+                <ion-button #j_11 expand="block" shape="round" [routerLink]="['/tabs']">
+                    Go Back
+                </ion-button>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+    <ion-grid #j_12>
+        <ion-row #j_13>
+            <ion-col #j_14>
+                <ion-text #j_15>
+                    Application
+                </ion-text>
+            </ion-col>
+            <ion-col #j_16>
+                <ion-text #j_17>
+                    {{__getMapping(currentItem, 'j_17__text', '', false)}}
+                </ion-text>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-content>

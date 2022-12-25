@@ -1,0 +1,77 @@
+<ion-header>
+    <ion-toolbar #j_174 color="primary">
+        <ion-buttons #j_175 slot="start">
+            <ion-button #j_176 disabled="false" expand="block" [routerLink]="['/bugreporting']">
+                <ion-icon #j_176__icon name="bug">
+                </ion-icon>
+            </ion-button>
+        </ion-buttons>
+        <ion-buttons #j_177 slot="end">
+            <ion-button #j_178 expand="block" (click)="logoutbuttonClick__j_178($event, currentItem)">
+                <ion-icon #j_178__icon name="log-out">
+                </ion-icon>
+            </ion-button>
+        </ion-buttons>
+        <ion-title #j_179>
+            Home
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+<ion-content color="primary">
+    <ion-card #j_159>
+        <ion-card-content #j_160>
+            <ion-searchbar #j_161 placeholder="Search for jobs" type="text" cancelButtonIcon="information-circle"
+            (ionChange)="search1IonChange__j_161($event, currentItem)">
+            </ion-searchbar>
+            <ion-list #j_162 *ngFor="let currentItem of __getMapping(currentItem, 'j_162', []);"
+            (click)="list3Click__j_162($event, currentItem)">
+                <ion-item #j_163>
+                    <ion-label #j_164 color="primary" mode="ios" slot="start">
+                        {{__getMapping(currentItem, 'j_164__text', 'Job', false)}}
+                    </ion-label>
+                </ion-item>
+            </ion-list>
+        </ion-card-content>
+    </ion-card>
+    <ngx-datatable class="material" #j_165 [cssClasses]="$aio_j_165.cssClasses" [messages]="$aio_j_165.messages"
+    [headerHeight]="$aio_j_165.headerHeight" [footerHeight]="$aio_j_165.footerHeight"
+    [rowHeight]="$aio_j_165.rowHeight" [loadingIndicator]="$aio_j_165.isLoading" [count]="$aio_j_165.count"
+    [offset]="$aio_j_165.offset" [limit]="$aio_j_165.limit" [sorts]="[$aio_j_165.sorts]"
+    (sort)="$aio_DataTableOnSort_j_165($event)" [scrollbarH]="true" [rows]="users">
+        <ngx-datatable-column [name]="'Email'" [prop]="'username'" [width]="230">
+            <ng-template let-value="value" let-currentItem="row" let-row="row" ngx-datatable-cell-template>
+                {{value}}
+            </ng-template>
+        </ngx-datatable-column>
+        <ngx-datatable-column [name]="'First Name'" [prop]="'firstName'" [width]="100">
+            <ng-template let-value="value" let-currentItem="row" let-row="row" ngx-datatable-cell-template>
+                {{value}}
+            </ng-template>
+        </ngx-datatable-column>
+        <ngx-datatable-column [name]="'Last Name'" [prop]="'lastName'" [width]="100">
+            <ng-template let-value="value" let-currentItem="row" let-row="row" ngx-datatable-cell-template>
+                {{value}}
+            </ng-template>
+        </ngx-datatable-column>
+        <ngx-datatable-column [name]="'job'" [prop]="'jobID'" [maxWidth]="200" [width]="100">
+            <ng-template let-value="value" let-currentItem="row" let-row="row" ngx-datatable-cell-template>
+                {{value}}
+            </ng-template>
+        </ngx-datatable-column>
+        <ngx-datatable-column [name]="'City'" [prop]="'City'" [width]="100">
+            <ng-template let-value="value" let-currentItem="row" let-row="row" ngx-datatable-cell-template>
+                {{value}}
+            </ng-template>
+        </ngx-datatable-column>
+        <ngx-datatable-column [name]="'Phone Number'" [prop]="'phoneNumber'" [width]="140">
+            <ng-template let-value="value" let-currentItem="row" let-row="row" ngx-datatable-cell-template>
+                {{value}}
+            </ng-template>
+        </ngx-datatable-column>
+        <ngx-datatable-column [name]="'Position'" [prop]="'position'" [width]="100">
+            <ng-template let-value="value" let-currentItem="row" let-row="row" ngx-datatable-cell-template>
+                {{value}}
+            </ng-template>
+        </ngx-datatable-column>
+    </ngx-datatable>
+</ion-content>

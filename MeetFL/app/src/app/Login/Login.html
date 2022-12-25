@@ -1,0 +1,67 @@
+<ion-content class="content" color="primary">
+    <ion-grid #j_67>
+        <ion-row #j_68>
+            <ion-col #j_69 class="login-wrapper">
+                <div #j_70 class="login-panel">
+                    <div #j_71 class="title-wrapper">
+                        <ion-img #j_72 src="assets/images/output-onlinepngtools_6.png" alt="Image error"
+                        class="login-logo">
+                        </ion-img>
+                        <ion-text #j_73 color="light" class="bottom-title">
+                            Log in to continue
+                        </ion-text>
+                    </div>
+                    <div #j_74 class="form-wrapper">
+                        <form #loginForm="ngForm" #loginForm_el (ngSubmit)="loginformNgSubmit__j_75($event, currentItem)">
+                            <ion-item #j_76__ion4Item>
+                                <ion-label #j_76__ion4Label color="light" position="floating">
+                                    Username
+                                </ion-label>
+                                <ion-icon #j_76__icon ngClass="input-icon" name="person" slot="end" color="light">
+                                </ion-icon>
+                                <ion-input #username="ngModel" #username_el [ngModel] [ngModelOptions]="{updateOn: 'change'}"
+                                color="dark" maxlength="254" minlength="1" name="username" pattern="^(([^<>()\[\]\\.,;:\s@&#34;]+(\.[^<>()\[\]\\.,;:\s@&#34;]+)*)|(&#34;.+&#34;))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$"
+                                required="true" type="email">
+                                </ion-input>
+                            </ion-item>
+                            <ion-text #j_77 color="danger" class="error" [ngClass]="{'visible': username.touched && username.errors}">
+                                Please enter a valid Email
+                            </ion-text>
+                            <ion-item #j_78__ion4Item>
+                                <ion-label #j_78__ion4Label color="light" position="floating">
+                                    Password
+                                </ion-label>
+                                <ion-icon #j_78__icon ngClass="eye" name="eye" slot="end" color="light">
+                                </ion-icon>
+                                <ion-input #password="ngModel" #password_el [ngModel] [ngModelOptions]="{updateOn: 'change'}"
+                                ngClass="password" color="dark" name="password" required="true" type="password">
+                                </ion-input>
+                            </ion-item>
+                            <ion-text #j_79 color="danger" class="error" [ngClass]="{'visible': password.touched && password.errors && password.errors.required}">
+                                Please enter a Password
+                            </ion-text>
+                            <div #j_80 class="keep-logged-in">
+                                <ion-item #j_81__ion4Item lines="none" mode="ios">
+                                    <ion-label #j_81__ion4Label color="dark" mode="ios">
+                                        Keep me logged in
+                                    </ion-label>
+                                    <ion-checkbox #rememberme="ngModel" #rememberme_el [ngModel]="false" mode="ios"
+                                    name="rememberme" slot="start" value="Checkbox1_value">
+                                    </ion-checkbox>
+                                </ion-item>
+                            </div>
+                            <ion-button #j_82 color="primary" expand="block" shape="round" type="submit" (click)="signinbuttonClick__j_82($event, currentItem)">
+                                Sign in
+                            </ion-button>
+                        </form>
+                        <div #j_83 class="bottom-panel">
+                            <ion-text #j_84 color="dark" class="sign-up" (click)="Apperyio.navigateTo('SignUp')">
+                                Sign up
+                            </ion-text>
+                        </div>
+                    </div>
+                </div>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-content>

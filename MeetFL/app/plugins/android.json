@@ -1,0 +1,47 @@
+{
+  "prepare_queue": {
+    "installed": [],
+    "uninstalled": []
+  },
+  "config_munge": {
+    "files": {}
+  },
+  "installed_plugins": {
+    "cordova-plugin-x-socialsharing": {
+      "ANDROID_SUPPORT_V4_VERSION": "24.1.1+",
+      "PACKAGE_NAME": "io.appery.project701093"
+    },
+    "cordova-twitter3-connect-plugin": {
+      "TWITTER_KEY": "{TWITTER_KEY}",
+      "TWITTER_SECRET": "{TWITTER_SECRET}",
+      "PACKAGE_NAME": "io.appery.project701093"
+    },
+    "cordova-plugin-whitelist": {
+      "PACKAGE_NAME": "io.appery.project701093"
+    },
+    "cordova-plugin-ionic-webview": {
+      "ANDROID_SUPPORT_ANNOTATIONS_VERSION": "27.+",
+      "PACKAGE_NAME": "io.appery.project701093"
+    },
+    "cordova-plugin-device": {
+      "PACKAGE_NAME": "io.appery.project701093"
+    },
+    "cordova-plugin-splashscreen": {
+      "PACKAGE_NAME": "io.appery.project701093"
+    },
+    "cordova-plugin-statusbar": {
+      "PACKAGE_NAME": "io.appery.project701093"
+    },
+    "cordova-plugin-ionic-keyboard": {
+      "PACKAGE_NAME": "io.appery.project701093"
+    },
+    "cordova-sqlite-storage": {
+      "PACKAGE_NAME": "io.appery.project701093"
+    }
+  },
+  "dependent_plugins": {
+    "es6-promise-plugin": {
+      "PACKAGE_NAME": "io.appery.project701093"
+    }
+  }
+}
