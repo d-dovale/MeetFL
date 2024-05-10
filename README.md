@@ -33,7 +33,6 @@ For support, use the built-in bug reporting system within the app. For further i
 
 - **Nicolas Cortes**: Database and Backend Development
 - **Daniel Dovale**: UI/UX Design and App Layout
-- **Adrian Saborio**: Marketing and Presentation
 
 ## Acknowledgments
 
